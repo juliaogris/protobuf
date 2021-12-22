@@ -616,13 +616,13 @@ message TestExtensionOrderings2 {
 }
 
 message TestExtremeDefaultValues {
-  optional bytes escaped_bytes = 1 [default = "\0\001\a\b\f\n\r\t\v\\\'\"\xfe"];
+  //optional bytes escaped_bytes = 1 [default = "\0\001\a\b\f\n\r\t\v\\\'\"\xfe"];
   optional uint32 large_uint32 = 2 [default = 0xFFFFFFFF];
   optional uint64 large_uint64 = 3 [default = 0xFFFFFFFFFFFFFFFF];
-  optional  int32 small_int32  = 4 [default = -0x7FFFFFFF];
-  optional  int64 small_int64  = 5 [default = -0x7FFFFFFFFFFFFFFF];
-  optional  int32 really_small_int32 = 21 [default = -0x80000000];
-  optional  int64 really_small_int64 = 22 [default = -0x8000000000000000];
+  //optional  int32 small_int32  = 4 [default = -0x7FFFFFFF];
+  //optional  int64 small_int64  = 5 [default = -0x7FFFFFFFFFFFFFFF];
+  //optional  int32 really_small_int32 = 21 [default = -0x80000000];
+  //optional  int64 really_small_int64 = 22 [default = -0x8000000000000000];
 
   // The default value here is UTF-8 for "\u1234".  (We could also just type
   // the UTF-8 text directly into this text file rather than escape it, but
@@ -637,7 +637,7 @@ message TestExtremeDefaultValues {
   optional float negative_float = 11 [default = -1.5];
   // Using exponents
   optional float large_float = 12 [default = 2E8];
-  optional float small_negative_float = 13 [default = -8e-28];
+  //optional float small_negative_float = 13 [default = -8e-28];
 
   // Text for nonfinite floating-point values.
   optional double inf_double = 14 [default = inf];
@@ -652,7 +652,7 @@ message TestExtremeDefaultValues {
   // escaped for other languages.
   // Note that in .proto file, "\?" is a valid way to escape ? in string
   // literals.
-  optional string cpp_trigraph = 20 [default = "? \? ?? \?? \??? ??/ ?\?-"];
+  //optional string cpp_trigraph = 20 [default = "? \? ?? \?? \??? ??/ ?\?-"];
 
   // String defaults containing the character '\000'
   optional string string_with_zero       = 23 [default = "hel\000lo"];

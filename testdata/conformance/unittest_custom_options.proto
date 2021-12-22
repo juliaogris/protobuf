@@ -169,16 +169,16 @@ extend google.protobuf.MessageOptions {
 
 message CustomOptionMinIntegerValues {
   option (bool_opt) = false;
-  option (int32_opt) = -0x80000000;
-  option (int64_opt) = -0x8000000000000000;
+  //option (int32_opt) = -0x80000000;
+  //option (int64_opt) = -0x8000000000000000;
   option (uint32_opt) = 0;
   option (uint64_opt) = 0;
-  option (sint32_opt) = -0x80000000;
-  option (sint64_opt) = -0x8000000000000000;
+  // option (sint32_opt) = -0x80000000;
+  // option (sint64_opt) = -0x8000000000000000;
   option (fixed32_opt) = 0;
   option (fixed64_opt) = 0;
-  option (sfixed32_opt) = -0x80000000;
-  option (sfixed64_opt) = -0x8000000000000000;
+  // option (sfixed32_opt) = -0x80000000;
+  // option (sfixed64_opt) = -0x8000000000000000;
 }
 
 message CustomOptionMaxIntegerValues {
@@ -200,7 +200,7 @@ message CustomOptionOtherValues {
   option (float_opt) = 12.3456789;
   option (double_opt) = 1.234567890123456789;
   option (string_opt) = "Hello, \"World\"";
-  option (bytes_opt) = "Hello\0World";
+  // option (bytes_opt) = "Hello\0World";
   option (enum_opt) = TEST_OPTION_ENUM_TYPE2;
 }
 
@@ -274,18 +274,18 @@ extend google.protobuf.MessageOptions {
 // Note that we try various different ways of naming the same extension.
 message VariousComplexOptions {
   option (.protobuf_unittest.complex_opt1).foo = 42;
-  option (protobuf_unittest.complex_opt1).(.protobuf_unittest.quux) = 324;
-  option (.protobuf_unittest.complex_opt1).(protobuf_unittest.corge).qux = 876;
+  //option (protobuf_unittest.complex_opt1).(.protobuf_unittest.quux) = 324;
+  //option (.protobuf_unittest.complex_opt1).(protobuf_unittest.corge).qux = 876;
   option (protobuf_unittest.complex_opt1).foo4 = 99;
   option (protobuf_unittest.complex_opt1).foo4 = 88;
   option (complex_opt2).baz = 987;
-  option (complex_opt2).(grault) = 654;
+  //option (complex_opt2).(grault) = 654;
   option (complex_opt2).bar.foo = 743;
-  option (complex_opt2).bar.(quux) = 1999;
-  option (complex_opt2).bar.(protobuf_unittest.corge).qux = 2008;
-  option (complex_opt2).(garply).foo = 741;
-  option (complex_opt2).(garply).(.protobuf_unittest.quux) = 1998;
-  option (complex_opt2).(protobuf_unittest.garply).(corge).qux = 2121;
+  //option (complex_opt2).bar.(quux) = 1999;
+  // option (complex_opt2).bar.(protobuf_unittest.corge).qux = 2008;
+  //option (complex_opt2).(garply).foo = 741;
+  //option (complex_opt2).(garply).(.protobuf_unittest.quux) = 1998;
+  //option (complex_opt2).(protobuf_unittest.garply).(corge).qux = 2121;
   option (ComplexOptionType2.ComplexOptionType4.complex_opt4).waldo = 1971;
   option (complex_opt2).fred.waldo = 321;
   option (complex_opt2).barney = {
@@ -384,9 +384,9 @@ option (fileopt) = {
   }
 
   any {
-    [type.googleapis.com/protobuf_unittest.AggregateMessageSetElement] {
-      s: 'EmbeddedMessageSetElement'
-    }
+    // [type.googleapis.com/protobuf_unittest.AggregateMessageSetElement] {
+    //   s: 'EmbeddedMessageSetElement'
+    // }
   }
 };
 
